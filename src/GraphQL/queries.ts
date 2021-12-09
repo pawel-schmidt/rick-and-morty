@@ -8,6 +8,7 @@ export const GET_CHARACTERS = gql`
       }
       results {
         name
+        image
       }
     }
   }
