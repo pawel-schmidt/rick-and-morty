@@ -1,25 +1,19 @@
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  useQuery,
-  gql
-} from "@apollo/client";
+import { gql, useQuery } from '@apollo/client'
 
 const EXCHANGE_RATES = gql`
-    query GetExchangeRates {
-        rates(currency: "USD") {
-            currency
-            rate
-        }
+  query GetExchangeRates {
+    rates(currency: "USD") {
+      currency
+      rate
     }
-`;
+  }
+`
 
 const ExchangeRates = () => {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES);
+  const { loading, error, data } = useQuery(EXCHANGE_RATES)
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error :(</p>;
+  if (loading) return <p>Loading...</p>
+  if (error) return <p>Error :(</p>
 
   return data.rates.map(({ currency, rate }) => (
     <div key={currency}>
@@ -27,7 +21,7 @@ const ExchangeRates = () => {
         {currency}: {rate}
       </p>
     </div>
-  ));
+  ))
 }
 
 export default ExchangeRates
