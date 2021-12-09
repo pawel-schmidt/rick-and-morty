@@ -1,8 +1,10 @@
-import ExchangeRates from './ExchangeRates'
+import React from 'react'
 
-const App = () => (
-  <div className="App">
-    <ExchangeRates />
+import Characters from './Characters'
+
+const App = (): React.ReactElement => (
+  <div>
+    <Characters />
   </div>
 )
 
