@@ -1,5 +1,9 @@
+import ExchangeRates from './ExchangeRates'
+
 const App = () => (
-  <div>App</div>
+  <div className="App">
+    <ExchangeRates/>
+  </div>
 )
 
 export default App
