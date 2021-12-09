@@ -9,11 +9,21 @@ const EXCHANGE_RATES = gql`
   }
 `
 
-const ExchangeRates = () => {
-  const { loading, error, data } = useQuery(EXCHANGE_RATES)
+interface ExchangeRate {
+  currency: string
+  rate: number
+}
 
-  if (loading) return <p>Loading...</p>
+interface ExchangeRates {
+  rates: ExchangeRate[]
+}
+
+const ExchangeRates = () => {
+  const { loading, error, data } = useQuery<ExchangeRates>(EXCHANGE_RATES)
+
+  if (loading) return <p>Loading…</p>
   if (error) return <p>Error :(</p>
+  if (!data) return <p>No data…</p>
 
   return data.rates.map(({ currency, rate }) => (
     <div key={currency}>
