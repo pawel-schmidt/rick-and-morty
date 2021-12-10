@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Characters from './Characters'
+import Characters from './pages/Characters'
 
 const App = (): React.ReactElement => (
   <div>
