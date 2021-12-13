@@ -2,8 +2,11 @@ import styled from 'styled-components'
 
 const gapSize = '8px'
 
+export const GridWrapper = styled.div`
+  padding: ${gapSize};
+`
+
 export const Grid = styled.div`
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
   margin: -${gapSize};
