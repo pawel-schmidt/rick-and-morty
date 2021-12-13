@@ -17,7 +17,7 @@ const Template: Story<ComponentPropsType> = (args) => {
 export const WithImage = Template.bind({})
 WithImage.args = {
   name: 'Rick Sanchez',
-  imageUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
 }
 
 export const WithoutImage = Template.bind({})
