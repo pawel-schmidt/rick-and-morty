@@ -1,0 +1,12 @@
+query characters($page: Int = 1) {
+  characters(page: $page) {
+    info {
+      count
+    }
+    results {
+      id
+      name
+      image
+    }
+  }
+}

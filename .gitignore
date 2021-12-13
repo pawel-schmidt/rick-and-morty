@@ -6,3 +6,7 @@ dist-ssr
 .idea/
 .eslintcache
 
+# GraphQL Codegen
+generated/
+/schema.graphql
+/schema.json

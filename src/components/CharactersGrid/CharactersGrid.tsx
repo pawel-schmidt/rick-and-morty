@@ -1,25 +1,25 @@
 import React from 'react'
 
+import { CharactersQueryHookResult } from '../../generated/graphql'
 import Character from '../Character/Character'
 import { Grid, GridCell } from './styled'
 
-interface CharacterResult {
-  id: number
-  name: string
-  image: string
-}
-
 interface Props {
-  characters: CharacterResult[]
+  data: CharactersQueryHookResult['data']
 }
 
-const CharactersGrid = ({ characters }: Props) => (
+const CharactersGrid = ({ data }: Props) => (
   <Grid>
-    {characters.map(({ id, name, image }) => (
-      <GridCell key={id}>
-        <Character name={name} imageUrl={image} />
-      </GridCell>
-    ))}
+    {data?.characters?.results?.map(
+      (character) =>
+        character && (
+          <GridCell key={character.id}>
+            {character.name && character.image && (
+              <Character name={character.name} image={character.image} />
+            )}
+          </GridCell>
+        ),
+    )}
   </Grid>
 )
 

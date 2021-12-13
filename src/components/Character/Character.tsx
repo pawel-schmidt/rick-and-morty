@@ -1,15 +1,13 @@
 import React from 'react'
 
+import { Character as CharacterType } from '../../generated/graphql'
 import { Image, Name, Wrapper } from './styled'
 
-interface Props {
-  name: string
-  imageUrl?: string
-}
+type Props = Pick<CharacterType, 'name' | 'image'>
 
-const Character = ({ name, imageUrl }: Props) => (
+const Character = ({ name, image }: Props) => (
   <Wrapper>
-    {imageUrl && <Image src={imageUrl} alt={name} />}
+    {image && <Image src={image} alt={name ?? 'Character'} />}
     <Name>{name}</Name>
   </Wrapper>
 )
