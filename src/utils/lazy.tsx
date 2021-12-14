@@ -1,5 +1,7 @@
 import React from 'react'
 
+import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
+
 type Params = Parameters<typeof React.lazy>
 interface Lazy {
   // eslint-disable-next-line no-unused-vars
@@ -16,7 +18,7 @@ const getComponentName = (path: string) => {
 const lazy: Lazy = (factory) => {
   const Component = React.lazy(factory)
   const LazyLoadedWithSuspense = () => (
-    <React.Suspense fallback={<>…</>}>
+    <React.Suspense fallback={<LoadingIndicator />}>
       <Component />
     </React.Suspense>
   )
