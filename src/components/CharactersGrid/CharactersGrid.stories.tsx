@@ -14,7 +14,7 @@ const Template: Story<ComponentPropsType> = (args) => {
   return <CharactersGrid {...args} />
 }
 
-const results = new Array(10).fill({
+const characters = new Array(10).fill({
   id: '1',
   name: 'Rick Sanchez',
   image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
@@ -22,20 +22,10 @@ const results = new Array(10).fill({
 
 export const WithItems = Template.bind({})
 WithItems.args = {
-  data: {
-    characters: {
-      info: null,
-      results,
-    },
-  },
+  characters,
 }
 
 export const Empty = Template.bind({})
 Empty.args = {
-  data: {
-    characters: {
-      info: null,
-      results: [],
-    },
-  },
+  characters: [],
 }

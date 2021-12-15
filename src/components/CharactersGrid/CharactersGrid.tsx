@@ -1,17 +1,27 @@
 import React from 'react'
 
-import { CharactersQueryHookResult } from '../../generated/graphql'
+import { Character as CharacterType, Maybe } from '../../generated/graphql'
 import Character from '../Character/Character'
 import { Grid, GridCell, GridWrapper } from './styled'
 
 interface Props {
-  data: CharactersQueryHookResult['data']
+  // TODO: figure out better type
+  characters: Maybe<
+    Array<
+      Maybe<
+        { __typename?: 'Character' } & Pick<
+          CharacterType,
+          'id' | 'name' | 'image'
+        >
+      >
+    >
+  >
 }
 
-const CharactersGrid = ({ data }: Props) => (
+const CharactersGrid = ({ characters }: Props) => (
   <GridWrapper>
     <Grid>
-      {data?.characters?.results?.map(
+      {characters?.map(
         (character) =>
           character && (
             <GridCell key={character.id}>

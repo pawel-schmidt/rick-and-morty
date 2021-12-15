@@ -20,7 +20,8 @@ module.exports = {
           ],
           config: {
             avoidOptionals: true,
-            skipTypename: false,
+            maybeValue: 'T | null | undefined',
+            preResolveTypes: false,
             withHooks: true,
             withHOC: false,
             withComponent: false,

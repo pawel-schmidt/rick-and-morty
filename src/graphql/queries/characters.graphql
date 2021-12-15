@@ -1,7 +1,7 @@
 query characters($page: Int = 1) {
   characters(page: $page) {
     info {
-      count
+      next
     }
     results {
       id
