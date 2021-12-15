@@ -11,6 +11,7 @@ export const Dots = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 16px;
 `
 
 const dotNormalStyles = css`
