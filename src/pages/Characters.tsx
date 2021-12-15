@@ -6,7 +6,9 @@ import { useCharactersQuery } from '../generated/graphql'
 import useBottomReached from '../hooks/useBottomReached'
 
 const Characters = (): React.ReactElement => {
-  const { loading, error, data, fetchMore } = useCharactersQuery()
+  const { loading, error, data, fetchMore } = useCharactersQuery({
+    notifyOnNetworkStatusChange: true,
+  })
 
   const loadMore = async () => {
     const nextPage = data?.characters?.info?.next
@@ -19,11 +21,16 @@ const Characters = (): React.ReactElement => {
 
   useBottomReached({ callback: loadMore })
 
-  if (loading) return <LoadingIndicator />
+  if (!data && loading) return <LoadingIndicator />
   if (error) return <p>Error :(</p>
   if (!data) return <p>No data…</p>
 
-  return <CharactersGrid characters={data.characters?.results ?? []} />
+  return (
+    <>
+      <CharactersGrid characters={data.characters?.results ?? []} />
+      {loading && <LoadingIndicator />}
+    </>
+  )
 }
 
 export default Characters
