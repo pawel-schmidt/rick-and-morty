@@ -1,3 +1,4 @@
+import debounce from 'lodash.debounce'
 import { useEffect, useState } from 'react'
 
 interface ScrollPosition {
@@ -26,9 +27,13 @@ export const useScrollPosition = (): ScrollPosition => {
       }
     }
 
+    const handleScrollDebounced = debounce(handleScroll, 150)
+
     if (isBrowser) {
-      window.addEventListener('scroll', handleScroll, { passive: true })
-      return () => window.removeEventListener('scroll', handleScroll)
+      window.addEventListener('scroll', handleScrollDebounced, {
+        passive: true,
+      })
+      return () => window.removeEventListener('scroll', handleScrollDebounced)
     }
   }, [])
 
