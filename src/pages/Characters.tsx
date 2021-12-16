@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import CharactersGrid from '../components/CharactersGrid/CharactersGrid'
 import LoadingIndicator from '../components/LoadingIndicator/LoadingIndicator'
@@ -6,9 +6,19 @@ import { useCharactersQuery } from '../generated/graphql'
 import useBottomReached from '../hooks/useBottomReached'
 
 const Characters = (): React.ReactElement => {
+  const [skip, setSkip] = useState(false)
   const { loading, error, data, fetchMore } = useCharactersQuery({
+    skip,
     notifyOnNetworkStatusChange: true,
   })
+
+  // TODO: find better solution for "Can't perform a React state update on an unmounted component"
+  // ref: https://github.com/apollographql/apollo-client/issues/6209#issuecomment-854421744
+  useEffect(() => {
+    return () => {
+      setSkip(true)
+    }
+  }, [])
 
   const loadMore = async () => {
     const nextPage = data?.characters?.info?.next
