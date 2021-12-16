@@ -13,7 +13,14 @@ export const Grid = styled.div`
 `
 
 export const GridCell = styled.div`
+  all: unset;
   box-sizing: border-box;
   flex-basis: 25%;
   padding: ${gapSize};
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    padding: calc(${gapSize} / 2);
+  }
 `

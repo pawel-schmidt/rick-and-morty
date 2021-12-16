@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { Character as CharacterType, Maybe } from '../../generated/graphql'
 import Character from '../Character/Character'
@@ -24,7 +25,11 @@ const CharactersGrid = ({ characters }: Props) => (
       {characters?.map(
         (character) =>
           character && (
-            <GridCell key={character.id}>
+            <GridCell
+              as={Link}
+              to={'/characters/' + character.id}
+              key={character.id}
+            >
               {character.name && character.image && (
                 <Character name={character.name} image={character.image} />
               )}
