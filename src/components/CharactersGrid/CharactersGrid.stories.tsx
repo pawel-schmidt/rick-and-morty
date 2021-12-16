@@ -1,5 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
+import { MemoryRouter } from 'react-router-dom'
 
 import CharactersGrid from './CharactersGrid'
 
@@ -11,14 +12,20 @@ export default {
 } as ComponentMeta<ComponentType>
 
 const Template: Story<ComponentPropsType> = (args) => {
-  return <CharactersGrid {...args} />
+  return (
+    <MemoryRouter>
+      <CharactersGrid {...args} />
+    </MemoryRouter>
+  )
 }
 
-const characters = new Array(10).fill({
-  id: '1',
-  name: 'Rick Sanchez',
-  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-})
+const characters = new Array(10)
+  .fill({
+    id: '1',
+    name: 'Rick Sanchez',
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+  })
+  .map((element, index) => ({ ...element, id: index.toString() }))
 
 export const WithItems = Template.bind({})
 WithItems.args = {
