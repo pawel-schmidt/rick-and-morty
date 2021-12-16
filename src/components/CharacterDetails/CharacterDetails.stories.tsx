@@ -16,10 +16,14 @@ const Template: Story<ComponentPropsType> = (args) => {
 
 export const Default = Template.bind({})
 Default.args = {
-  name: 'Rick Sanchez',
-  image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-  status: 'Alive',
-  species: 'Human',
-  type: '',
-  gender: 'Male',
+  character: {
+    id: '1',
+    name: 'Rick Sanchez',
+    image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+    status: 'Alive',
+    species: 'Human',
+    type: '',
+    gender: 'Male',
+    created: '',
+  },
 }
