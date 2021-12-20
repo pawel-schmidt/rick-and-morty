@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Label = styled.div`
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: lowercase;
   font-size: smaller;
 `
 
@@ -21,5 +21,6 @@ export const Filler = styled.div`
 `
 
 export const Value = styled.div`
+  font-family: 'Cabin Sketch', cursive;
   text-transform: capitalize;
 `

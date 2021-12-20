@@ -19,7 +19,7 @@ const CharacterDetails = (): React.ReactElement => {
 
   return (
     <>
-      <h2>Character Details</h2>
+      <h1>{data.character.name ?? 'Character Details'}</h1>
       {data.character && <CharacterDetailsView character={data.character} />}
     </>
   )
