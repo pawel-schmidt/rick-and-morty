@@ -13,7 +13,7 @@ Check out [the demo](https://rick-and-morty-demo.netlify.app/) and [storybook](h
 
 ## 🔬 Tech stack
 
-### Application:
+#### Application:
 
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
@@ -24,7 +24,7 @@ Check out [the demo](https://rick-and-morty-demo.netlify.app/) and [storybook](h
 - [Styled Components](https://styled-components.com/)
 - [Storybook](https://storybook.js.org/)
 
-### Code quality tools:
+#### Code quality tools:
 
 - [Husky](https://typicode.github.io/husky/)
 - [Prettier](https://prettier.io/)
@@ -107,7 +107,7 @@ Check out [the demo](https://rick-and-morty-demo.netlify.app/) and [storybook](h
    > NOTICE:
    > since the application uses React Router, make sure you redirect every path to `/index.html` on the server.
 
-### Build and deploy Storybook
+### 📚 Build and deploy Storybook
 
 1. Build the Storybook:
 
@@ -129,6 +129,6 @@ Check out [the demo](https://rick-and-morty-demo.netlify.app/) and [storybook](h
 - [ ] Improve accessibility
 - [ ] Improve GraphQL caching
 
-## Contribution
+## 🙌 Contribution
 
 If you have any remarks, don't hesitate to [create an issue](https://github.com/pawel-schmidt/rick-and-morty/issues/new).
