@@ -1,15 +1,23 @@
 import { Link, LinkProps } from 'react-router-dom'
+import { down } from 'styled-breakpoints'
 import styled, { css } from 'styled-components'
+
+export const Wrapper = styled.div`
+  width: 100%;
+  background-color: beige;
+`
 
 export const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 100%;
-  height: 64px;
-  padding: 8px;
-  box-sizing: border-box;
-  background-color: beige;
   align-items: stretch;
+  box-sizing: border-box;
+  height: 64px;
+  padding: 8px 0;
+
+  ${down('sm')} {
+    padding: 8px;
+  }
 `
 
 const activeLinkStyles = css`

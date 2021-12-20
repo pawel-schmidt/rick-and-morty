@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
   border-radius: 4px;
   border: solid thin #000;
   overflow: hidden;
-  width: 400px;
+  width: ${({ theme }) => theme.breakpoints.sm};
   margin-left: auto;
   margin-right: auto;
 `

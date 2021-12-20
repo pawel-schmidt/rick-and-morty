@@ -2,11 +2,14 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 
 import Navigation from '../Navigation/Navigation'
+import { StyledContainer } from './styled'
 
 const Layout = () => (
   <>
     <Navigation />
-    <Outlet />
+    <StyledContainer>
+      <Outlet />
+    </StyledContainer>
   </>
 )
 
