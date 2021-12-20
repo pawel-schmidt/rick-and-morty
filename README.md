@@ -119,7 +119,7 @@ Check out [the demo](https://rick-and-morty-demo.netlify.app/) and [storybook](h
 
 ## 🗺 Roadmap
 
-- [ ] Add logo
+- [x] Add logo
 - [ ] Add image placeholder
 - [ ] Add transitions between routes
 - [ ] Add filter functionality
