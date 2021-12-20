@@ -7,6 +7,20 @@ export const Wrapper = styled.div`
   background-color: beige;
 `
 
+export const Logo = styled.img`
+  display: inline-block;
+  max-height: 100%;
+`
+
+export const LogoLink = styled(Link)`
+  border-radius: 50%;
+  transition: 300ms;
+
+  &:hover {
+    background-color: tomato;
+  }
+`
+
 export const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
