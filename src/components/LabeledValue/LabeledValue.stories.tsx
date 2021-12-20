@@ -1,5 +1,6 @@
 import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
+import styled from 'styled-components'
 
 import LabeledValue from './LabeledValue'
 
@@ -10,9 +11,15 @@ export default {
   component: LabeledValue,
 } as ComponentMeta<ComponentType>
 
-const Template: Story<ComponentPropsType> = (args) => {
-  return <LabeledValue {...args} />
-}
+const Wrapper = styled.div`
+  max-width: ${({ theme }) => theme.breakpoints.sm};
+`
+
+const Template: Story<ComponentPropsType> = (args) => (
+  <Wrapper>
+    <LabeledValue {...args} />
+  </Wrapper>
+)
 
 export const Default = Template.bind({})
 Default.args = {

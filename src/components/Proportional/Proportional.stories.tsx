@@ -11,6 +11,10 @@ export default {
   component: Proportional,
 } as ComponentMeta<ComponentType>
 
+const Wrapper = styled.div`
+  max-width: ${({ theme }) => theme.breakpoints.sm};
+`
+
 const Box = styled.div`
   display: flex;
   justify-content: center;
@@ -21,13 +25,13 @@ const Box = styled.div`
   color: white;
 `
 
-const Template: Story<ComponentPropsType> = (args) => {
-  return (
+const Template: Story<ComponentPropsType> = (args) => (
+  <Wrapper>
     <Proportional {...args}>
       <Box>Proportional component</Box>
     </Proportional>
-  )
-}
+  </Wrapper>
+)
 
 export const Square = Template.bind({})
 

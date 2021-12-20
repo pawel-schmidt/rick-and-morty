@@ -1,6 +1,5 @@
 import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
 
 import CharactersGrid from './CharactersGrid'
 
@@ -11,13 +10,9 @@ export default {
   component: CharactersGrid,
 } as ComponentMeta<ComponentType>
 
-const Template: Story<ComponentPropsType> = (args) => {
-  return (
-    <MemoryRouter>
-      <CharactersGrid {...args} />
-    </MemoryRouter>
-  )
-}
+const Template: Story<ComponentPropsType> = (args) => (
+  <CharactersGrid {...args} />
+)
 
 const characters = new Array(10)
   .fill({

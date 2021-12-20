@@ -1,6 +1,5 @@
 import { ComponentMeta, Story } from '@storybook/react'
 import React from 'react'
-import { MemoryRouter } from 'react-router-dom'
 
 import Navigation from './Navigation'
 
@@ -11,12 +10,6 @@ export default {
   component: Navigation,
 } as ComponentMeta<ComponentType>
 
-const Template: Story<ComponentPropsType> = () => {
-  return (
-    <MemoryRouter>
-      <Navigation />
-    </MemoryRouter>
-  )
-}
+const Template: Story<ComponentPropsType> = () => <Navigation />
 
 export const Default = Template.bind({})
