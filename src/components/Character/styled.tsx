@@ -16,6 +16,7 @@ export const Image = styled.img`
 `
 
 export const Name = styled.div`
+  font-family: 'Cabin Sketch', cursive;
   text-transform: capitalize;
   color: black;
   background-color: rgba(255, 255, 255, 0.5);

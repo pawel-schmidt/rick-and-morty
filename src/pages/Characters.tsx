@@ -37,6 +37,7 @@ const Characters = (): React.ReactElement => {
 
   return (
     <>
+      <h1>Characters</h1>
       <CharactersGrid characters={data.characters?.results ?? []} />
       {loading && <LoadingIndicator />}
     </>

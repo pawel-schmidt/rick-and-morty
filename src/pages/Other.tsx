@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Other = () => {
-  return <div>Other</div>
+  return <h1>Other</h1>
 }
 
 export default Other
