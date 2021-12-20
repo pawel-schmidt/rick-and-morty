@@ -19,8 +19,4 @@ export const GridCell = styled.div`
   padding: ${gapSize};
   cursor: pointer;
   transition: 300ms;
-
-  &:hover {
-    padding: calc(${gapSize} / 2);
-  }
 `

@@ -2,10 +2,17 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   border-radius: 8px;
-  border: solid thin gray;
+  box-shadow: 0 0 4px gray;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  transition: 300ms;
+  box-sizing: border-box;
+
+  &:hover {
+    box-shadow: 0 0 8px 2px gray;
+    transform: scale(1.05, 1.05);
+  }
 `
 
 export const Image = styled.img`
