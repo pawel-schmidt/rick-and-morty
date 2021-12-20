@@ -57,6 +57,7 @@ export const NavLink = styled(Link).withConfig({
   border-radius: 8px;
   padding-left: 16px;
   padding-right: 16px;
+  font-family: 'Cabin Sketch', cursive;
   transition: 300ms;
 
   &:hover {
